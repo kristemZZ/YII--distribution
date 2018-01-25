@@ -64,7 +64,8 @@ class GameUsers extends \yii\db\ActiveRecord
      * @param array $data
      * @return array （type 1 今日新增玩家）代理玩家个数 和信息
      */
-    public static function my_game_users($game_id, $type = 0,$month = 0,$data = []){
+    public static function my_game_users(int $game_id, int $type = 0,int $month = 0,array $data = []): array
+    {
         switch ($month){
             case 0:
                 if(!$type){

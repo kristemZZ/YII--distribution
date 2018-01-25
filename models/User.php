@@ -214,7 +214,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
      * @param array $data
      * @return array 下级代理人数，代理信息
      */
-   public static function nex_auth($game_id,$type = 0,$month = 0,$data = []){
+   public static function nex_auth(int $game_id,int $type = 0,int $month = 0,array $data = []): array
+   {
        switch ($month){
            case 0:
                if(!$type){
@@ -247,7 +248,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
      * *@param int $month 指定月份
      *  下级代理给我带来的收益
      */
-   public static function auth_profit($game_id,$level,$type = 0,$month = 0,$data = []){
+   public static function auth_profit(int $game_id,int $level,int $type = 0,int $month = 0,array $data = []): float
+   {
        $nex_auth = self::nex_auth($game_id); //我的下级代理
        if(isset($nex_auth) && count($nex_auth)>0){
            foreach ($nex_auth['users'] as $auth){
@@ -315,7 +317,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
    /**
     *  直属玩家，我的收益
     */
-   public static function my_own_profit($game_id,$level,$type = 0,$month = 0,$data = []){
+   public static function my_own_profit(int $game_id,int $level,int $type = 0,int $month = 0,array $data = []): array
+   {
        $games = GameUsers::my_game_users($game_id);
 
        foreach ($games['users'] as $val){
@@ -334,7 +337,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
        $data['sum_money'] = $sum;
        return $data;
    }
-   public static function nex_auth_recharge($game_id,$level,$type = 0,$month = 0,$data=[]){
+   public static function nex_auth_recharge(int $game_id,int $level,int $type = 0,int $month = 0,array $data=[]): float
+   {
         $nex_auth = self::nex_auth($game_id);
         foreach ($nex_auth['users'] as $val){
             $data[] = GameRecharge::game_recharge_money($val['game_id'],$type,$month);
@@ -361,7 +365,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
      * @param array $data
      * @return mixed          我的收益，包括下级代理
      */
-    public static function my_all_profit($game_id,$level,$type = 0,$month = 0){
+    public static function my_all_profit(int $game_id,int $level,int $type = 0,int $month = 0): float
+    {
         $profit = self::my_own_profit($game_id,$level,$type,$month); //直属玩家收益
         if($level < 2){
             $my_nex_auth_profit = self::auth_profit($game_id,$level,$type,$month);
@@ -382,7 +387,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
      * @return int|mixed
      *   该id给我来的收益
      */
-    public static function to_my_profit($nex_auth,$level,$type = 0,$month = 0,$data = 0){
+    public static function to_my_profit(array $nex_auth,int $level,int $type = 0,int $month = 0,int $data = 0): float
+    {
         $money = self::my_own_profit($nex_auth['game_id'],$nex_auth['level'],$type,$month);  //该代理直属玩家收益
         switch ($level){
             case 1:   //我是一代

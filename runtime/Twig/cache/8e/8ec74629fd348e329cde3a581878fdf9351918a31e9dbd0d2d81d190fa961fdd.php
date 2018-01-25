@@ -23,7 +23,7 @@ class __TwigTemplate_da393d839d81040a5a667e7e45a5975446107661a2e670c81ededfc9970
     <meta charset=\"UTF-8\">
     <script type=\"text/javascript\">
         if(window.WebSocket){
-            var webSocket = new WebSocket(\"ws://112.74.171.61:9502?id=";
+            var webSocket = new WebSocket(\"ws://manzigame.com:9508?id=";
         // line 8
         echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : null), "html", null, true);
         echo "&name=";
@@ -90,7 +90,7 @@ class __TwigTemplate_da393d839d81040a5a667e7e45a5975446107661a2e670c81ededfc9970
 /*     <meta charset="UTF-8">*/
 /*     <script type="text/javascript">*/
 /*         if(window.WebSocket){*/
-/*             var webSocket = new WebSocket("ws://112.74.171.61:9502?id={{ id }}&name={{ name }}");*/
+/*             var webSocket = new WebSocket("ws://manzigame.com:9508?id={{ id }}&name={{ name }}");*/
 /*             webSocket.onopen = function (event) {*/
 /* //                var id = "{{ id }}";*/
 /* //                var name = "{{ name }}";*/

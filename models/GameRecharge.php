@@ -56,7 +56,8 @@ class GameRecharge extends \yii\db\ActiveRecord
      * @return array|int|mixed|\yii\db\ActiveRecord[]
      *  获取玩家充值金额
      */
-    public static function game_recharge_money($game_id,$type = 0,$month = 0,$money = 0){
+    public static function game_recharge_money(int $game_id, int $type = 0, int $month = 0,float $money = 0)
+    {
         switch ($month){
             case 0:
                 if($type == 0){
@@ -86,7 +87,7 @@ class GameRecharge extends \yii\db\ActiveRecord
                 foreach ($recharges as $val){
                     $money += $val['money'];
                 }
-                return $money;
+                return (float)$money;
                 break;
         }
 
@@ -100,7 +101,8 @@ class GameRecharge extends \yii\db\ActiveRecord
      * @param int $data
      * @return float|int 直属玩家给我带来的收益
      */
-    public static function gameusers_profit($game_id,$level,$type=0,$month=0,$data = 0){
+    public static function gameusers_profit(int $game_id,int $level,int $type=0,int $month=0,$data = array()): float
+    {
         switch ($month){
             case 0:
                 if($type == 0){
