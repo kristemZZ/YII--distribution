@@ -1,0 +1,189 @@
+.layout{
+    margin: 0 auto;
+    max-width: 750px;
+    min-width: 320px;
+    width: 100%;
+    //顶部
+    .head{
+        height: 2.3rem;
+        overflow: hidden;
+        background-image: linear-gradient(-180deg, #FFD517 0%, #FFA200 100%);
+        p{
+            font-family: PingFangSC-Regular;
+            text-align: center;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            line-height: 0.48rem;
+        }
+        p:nth-of-type(1){
+            margin-top: 0.59rem;
+            font-size: 0.5rem;
+        }
+        p:nth-of-type(2){   
+            margin-top: 0.05rem;
+            font-size: 0.3rem;    
+        }
+    }
+    //表单域
+    .inputBox{
+        position: relative;
+    }
+    
+    .form{
+        padding: 0 0.3rem;
+        position: relative;
+        .form-common{
+            padding: 0.2rem;
+            width: 6.9rem;
+            height: 0.9rem;
+            background: #FFFFFF;
+            border: 2px solid #C9C9C9;
+            border-radius: 8px;
+            font-size: 0.3rem;
+            color: #c8c8c8;
+        }
+        .show{
+            input::-webkit-input-placeholder{
+                color: #FF4610;
+            }
+        }
+        input::-webkit-input-placeholder{
+            color: #c8c8c8;
+        }
+        .code{
+            padding: 0.2rem;
+            width: 4.4rem;
+            height: 0.9rem;
+            background: #FFFFFF;
+            border: 2px solid #C9C9C9;
+            border-radius: 8px;
+            font-size: 0.3rem;
+            color: #c8c8c8;
+        }
+        .getBtn{
+            position: absolute;
+            bottom: 0px;
+            right: 0rem;
+            background: #FFB107;
+            border-radius: 0.08rem;
+            width: 2.3rem;
+            height: 0.9rem;
+          line-height: 0.9rem;
+          text-align: center;
+            font-size: 0.3rem;
+            color: #FFFFFF;
+           
+            border: 0;
+            margin-left: 0.2rem;
+           
+        }
+    }
+    //登录导航
+    .login-nav{
+        width: 100%;
+        height: 4.15rem;
+        position: relative;
+        padding: 0 0.64rem;
+        ul{
+            position: absolute;
+            bottom: 0rem;
+            li:nth-of-type(2) {
+                border-left: 2px solid #c9c9c9;
+                border-right: 2px solid #c9c9c9;
+            }           
+            li{
+                float: left;
+                font-size: 0.28rem;
+                padding: 0 0.47rem;
+              
+                line-height: 0.28rem;
+                a{
+                    color: #3398FD;
+                }
+            }
+        }
+    }
+    .notice{
+        font-size: 0.28rem;
+        margin: 0.15rem 0 1.6rem 0;
+        position: relative;
+        i{
+            position: absolute;
+            width: 0.32rem;
+            height: 0.32rem;
+            border-radius: 50%;
+            border: 1px solid #e3e3e3;
+            top: 0.02rem;
+            left: 0.5rem;
+        }
+        .active{
+            background: url("../images/ok_icon_small_light.png") no-repeat center center;
+            background-size: 0.32rem 0.32rem;
+        }
+        p{
+            text-align: center;
+            color: #B5B5B5;
+            a{
+                color:  #3398FD;
+            }
+        }
+    }
+    //登录
+    .btnBox{
+        margin-top: 0.6rem;
+        padding: 0 0.3rem;
+        button{  
+            display: block;
+            width: 6.9rem;
+            height: 0.9rem;
+            background: #FFB107;
+            border-radius: 0.08rem;
+            font-size: 0.34rem;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 0.9rem;
+            border: 0;
+        }
+    }
+}
+
+.zBox{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: rgba(0,0, 0, 0.6);
+    display: none;
+    .smBox{
+        width: 5.6rem;
+        height: 2.6rem;
+        background: #FFFFFF;
+        border-radius: 0.16rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding-left: 1.93rem;
+        overflow: hidden;
+        img{
+            width: 1rem;
+            height: 1rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0.73rem;
+        }
+        p:nth-of-type(1){
+            margin-top: 0.63rem;
+            font-size: 0.42rem;
+            color: #222222;
+        }
+        p:nth-of-type(2){
+            font-size: 0.36rem;
+            color: #222222;
+        }
+    }
+}
+.show{
+    display: block;
+}

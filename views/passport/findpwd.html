@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ app.language}}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/base.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/login.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/lib/mui/mui.css">
+    <title>修改密码</title>
+</head>
+<body data-module="password">
+<div class="layout">
+    <div class="head">
+        <p>{{app.name}}</p>
+        <p>发掘更有价值的自己</p>
+    </div>
+    <form action="#">
+        <div class="form">
+
+            <div class="inputBox"> <input type="text" class="form-common" placeholder="请输入手机号" id="phone"> </div>
+            <div class="inputBox"> <input type="text" placeholder="输入四位验证码" class="code" id="code"><i class="getBtn" id="getBtn">获取验证码</i> </div>
+            <div class="inputBox"><input type="password" class="form-common" placeholder="请设置6-16位密码" id="password"> </div>
+            <div class="inputBox"><input type="password" class="form-common" placeholder="请再次输入6-16位密码" id="passwordt"> </div>
+
+        </div>
+        <div class="btnBox">
+            <i  class="loginBtn" id="loginBtn">登录</i>
+        </div>
+    </form>
+</div>
+<div class="zBox">
+    <div class="smBox">
+        <img src="{{ app.params.skinUrl }}/src/images/ok_icon.png" alt="">
+        <p>密码修改成功</p>
+        <p>正在进入系统...</p>
+    </div>
+</div>
+</body>
+<script src="{{ app.params.skinUrl }}/src/js/base.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/tool/fastclick.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/lib/mui/mui.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/password.js"></script>
+<script>
+    document.getElementsByClassName("zBox")[0].style.height=window.innerHeight+"px";
+</script>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/lib/mui/mui.css">-->
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/base.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/myIncome.css">
+
+    <title>我的收益</title>
+</head>
+<body data-module="myincome">
+<div class="layout">
+    <div class="mouth">
+        <i></i>
+        <div class="mui_scroll">
+            <ul id="uls">
+                {% for i in month %}
+                <li month="{{ i }}">{{ i }}月收益</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="incomeNav clearfix">
+        <ul>
+            <li class="li_tap"><a href="javascript:;" class="on">今日收益</a></li>
+            <li class="li_tap"><a href="javascript:;">本周收益</a></li>
+            <li class="li_tap"><a href="javascript:;" id="show_text">累计收益</a></li>
+        </ul>
+        <i id="iconBtn"></i>
+    </div>
+    <div class="incomeBox">
+        <input type="hidden" id="today" value="{{ today_profit }}">
+        <input type="hidden" id="week" value="{{ week_profit }}">
+        <input type="hidden" id="all" value="{{ all_profit }}">
+        <p id='profit'>{{ today_profit }}</p>
+    </div>
+    <div class="searchBox">
+        <input type="hidden" id="type" value="0m">
+        <input type="text" placeholder="请输入代理ID" id="searchinfo"><button id="search">查询</button>
+    </div>
+    <div class="bgbox">
+        <!-- 今日收益 -->
+        <div class="searchList today show">
+            <ul>
+                <li>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th width="10%">排序</th>
+                            <th width="70%">代理</th>
+                            <th width="20%">收益(元)</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </li>
+                <li id="today_1">
+                    {% if today_info == 0 %}
+                        <a>还没有下级代理</a>
+                    {% else %}
+                        {% for key,one in today_info %}
+
+                            <a href="javascript:">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td width="10%">{{ key+1 }}</td>
+                                        <td width="70%">
+                                            <img src="{{ app.params.skinUrl }}/src/images/index1.png" alt=""><p>ID：{{ one.game_id }}</p><p>{{ one.nickname }}</p>
+                                        </td>
+                                        <td width="20%">{{ one.to_my_profit_today }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+        <!-- 本周收益 -->
+        <div class="searchList week">
+            <ul>
+                <li>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th width="10%">排序</th>
+                            <th width="70%">代理</th>
+                            <th width="20%">收益(元)</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </li>
+                <li id="week_1">
+                    {% if today_info == 0 %}
+                    <a>还没有下级代理</a>
+                    {% else %}
+                    {% for key,one in today_info %}
+                    <a href="javascript:">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td width="10%">{{ key+1 }}</td>
+                                <td width="70%">
+                                    <img src="{{ app.params.skinUrl }}/src/images/index1.png" alt=""><p>ID：{{ one.game_id }}</p><p>{{ one.nickname }}</p>
+                                </td>
+                                <td width="20%">{{ one.to_my_profit_week }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </a>
+                    {% endfor %}
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+        <!-- 总收益 -->
+        <div class="searchList total">
+            <ul>
+                <li>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th width="10%">排序</th>
+                            <th width="70%">代理</th>
+                            <th width="20%">收益(元)</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </li>
+                <li id="month">
+                    {% if today_info == 0 %}
+                    <a>还没有下级代理</a>
+                    {% else %}
+                    {% for key,one in today_info %}
+                    <a href="javascript:">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td width="10%">{{ key+1 }}</td>
+                                <td width="70%">
+                                    <img src="{{ app.params.skinUrl }}/src/images/index1.png" alt=""><p>ID：{{ one.game_id }}</p><p>{{ one.nickname }}</p>
+                                </td>
+                                <td width="20%">{{ one.to_my_profit_all }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </a>
+                    {% endfor %}
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+<script src="{{ app.params.skinUrl }}/src/js/tool/jquery-2.1.1.min.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/base.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/tool/fastclick.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/lib/mui/mui.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/myincome.js"></script>
+</html>

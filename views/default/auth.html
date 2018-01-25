@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/base.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/lib/mui/mui.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/auth.css">
+
+    <title>授权代理</title>
+</head>
+<body data-module="auth">
+<div class="layout">
+    <div class="searchBox">
+        <input type="text" placeholder="请输入代理ID" id="searchinfo"><i id="search">搜索</i>
+        <a href="{{ url(['/default/authrecord']) }}">授权记录</a>
+    </div>
+    <div class="searchList">
+        <ul id="game_list">
+            {% if players == 0 %}
+                <li>没有玩家可以授权</li>
+            {% else %}
+                {% for val in players %}
+                    <li>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td width="50%">
+                                    <img src="{{ app.params.skinUrl }}/src/images/index1.png" alt="">
+                                    <p>ID：{{ val.game_id }}</p><p>{{ val.nickname }}</p>
+                                </td>
+                                <td width="50%">
+                                    <i class="sure" gameid = "{{ val.id }}"></i>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                {% endfor %}
+            {% endif %}
+
+
+        </ul>
+    </div>
+    <div class="bottom">
+        <input type="hidden" name="game_ids" value="" id="game_ids">
+        <i class="sureBtn" id="sureBtn">确认授权</i>
+    </div>
+</div>
+</body>
+<script src="{{ app.params.skinUrl }}/src/js/base.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/tool/fastclick.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/lib/mui/mui.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/auth.js"></script>
+</html>

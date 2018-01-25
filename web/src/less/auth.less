@@ -1,0 +1,127 @@
+.layout{
+    max-width: 750px;
+    min-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #e3e3e3;
+    .searchBox{
+        padding: 0.18rem 0.3rem;
+        background-color: #e3e3e3;
+        height: 0.98rem;
+        position: relative;
+        >a{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0.3rem;
+            font-size: 0.28rem;
+            color: #3398FD;
+        }
+        input{
+            width: 5.5rem;
+            height: 0.62rem;
+            background: #FFFFFF;
+            border: 1px solid #C4C4C4;
+            border-radius: 1rem;
+            position: absolute;
+            top: 0.18rem;
+            left: 0.3rem;
+            padding-left: 0.3rem;
+        }
+        button{
+            background: #FFB107;
+            border-radius: 1rem;
+            width: 0.96rem;
+            height: 0.54rem;
+            text-align: center;
+            line-height: 0.54rem;
+            outline: none;
+            border: 0;
+            position: absolute;
+            top: 0.22rem;
+            right: 1.74rem;
+            color: #fff;
+            font-size: 0.24rem;
+        }
+    }
+    .searchList{
+        font-size: 0.24rem;
+        background-color: #fff;
+       li{
+        border-bottom: 1px solid #e3e3e3;
+        margin-left: 0.3rem;
+       }
+        table{
+            width: 100%;
+            padding-right: 0.3rem;
+            tbody{
+                tr{
+                    
+                    td{
+                        color: #666;
+                        text-align: left;
+                        padding: 0.22rem 0;
+                        position: relative;
+                        img{
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 0px;
+                            width: 0.68rem;
+                            height: 0.68rem;
+                            border-radius: 50%;
+                        }
+                    }
+                    td:nth-of-type(1){
+                        padding-left: 0.8rem;
+                        p:nth-of-type(1){
+                            font-size:0.28rem;
+                            color: #222;
+                        }
+                        p:nth-of-type(2){
+                            font-size:0.24rem;
+                            color: #3f3f3f;
+                        }
+                    }
+                    td:nth-of-type(2){
+                       i{
+                           position: absolute;
+                           top:50%;
+                           transform: translateY(-50%);
+                           right: 0px;
+                           width: 0.4rem;
+                           height: 0.4rem;
+                           border-radius: 50%;
+                           border: 1px solid #757575;
+                       }
+                       .active{
+                        background: url("../images/duigou_icon.png") no-repeat center center;
+                        background-size: 0.4rem 0.4rem;
+                        border: 0;
+                       }
+                    }
+                }
+            }
+        }
+    }
+    .bottom{
+        background:  #fff;;
+      
+        height: 1.08rem;
+        position: relative;
+        .sureBtn{
+            background: #FFB107;
+            border-radius: 1rem;
+            width: 6.9rem;
+            height: 0.78rem;
+            border: 0;
+            outline: none;
+            font-size: 0.32rem;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/base.css">
+    <link rel="stylesheet" type="text/css" href="{{ app.params.skinUrl }}/src/css/lib/mui/mui.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ app.params.skinUrl }}/src/css/lib/mui/mui.poppicker.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ app.params.skinUrl }}/src/css/lib/mui/mui.picker.css"/>
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/addbankcard.css">
+    <title>添加银行卡</title>
+</head>
+<body>
+<div class="layout">
+    <div class="inputbox">
+        <label>真实姓名</label><input type="text" id="name"  placeholder="请输入持卡人姓名" value="{{ cardinfo.name }}">
+    </div>
+    <div class="inputbox">
+        <label>身份证号</label><input type="text" id="id_card"  placeholder="请正确填写身份证号码" value="{{ cardinfo.id_card }}">
+    </div>
+    <div class="inputbox">
+        <label>开户银行</label><input type="text" placeholder="请选择开户行"  id="bank" class="bank" value="{{ cardinfo.bank_name }}">
+    </div>
+    <div class="inputbox">
+        <label>支行名称</label><input type="text" id="branch_name" placeholder="请输入支行名称"  value="{{ cardinfo.branch_name }}">
+    </div>
+    <div class="inputbox">
+        <label>银行卡号</label><input type="text" id="card_num" placeholder="请输入银行卡号"  value="{{ cardinfo.card_num }}">
+    </div>
+    <p>请确保姓名、身份证、银行卡开户人为同一个人</p>
+    <div class="prompt">
+        <p>温馨提示:</p>
+        <p>请填写真实信息，才能确保收款；</p>
+        <p>目前仅支持储蓄卡和借记卡，请不要填写信用卡;</p>
+        <p>绑定62开头、有银联标识的储蓄卡，到账更及时。</p>
+    </div>
+    <a href="javascript:" class="btn" >修改</a>
+</div>
+</body>
+<script src="{{ app.params.skinUrl }}/src/js/base.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/tool/fastclick.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/lib/mui/mui.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ app.params.skinUrl }}/src/js/lib/mui/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ app.params.skinUrl }}/src/js/lib/mui/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ app.params.skinUrl }}/src/js/addbankcard.js"></script>
+</html>

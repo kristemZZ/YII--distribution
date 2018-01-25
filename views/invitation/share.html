@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/base.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/invite.css">
+    <title>邀请玩家</title>
+
+</head>
+<body>
+<div class="layout">
+    <div class="top">
+        邀请玩家
+        <!-- <i id="share">分享</i> -->
+    </div>
+    <div class="manzi_logo">
+
+    </div>
+    <div class="show_box">
+
+    </div>
+    <div class="message">
+        <img src="{{ app.params.skinUrl }}/src/images/index4.png" alt=""><br>
+        <p>ID：{{ id }}</p><br>
+        <img src="{{ url }}" alt="" class="erweima">
+        <i>长按二维码联系我</i>
+        <div class="bottom_img">
+            <p>零风险&nbsp&nbsp&nbsp零投入</p>
+            <p>首月入保底<i>5000-15000</i></p>
+            <p>赶快跟我一起做蛮子吧</p>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- 微信分享层 -->
+<!-- <div class="sharebox" id="sharebox">
+        <div class="mybox">
+                <div class="top">
+                        <ul>
+                            <li>分享到</li>
+                            <li class="quxiao">取消</li>
+                        </ul>
+                    </div>
+
+                  <a href="javascript:;"> <i></i><p>微信好友</p></a>
+                  <a href="javascript:;"> <i></i><p>朋友圈</p></a>
+        </div>
+</div> -->
+<input type="hidden" name="" id="wh">
+</body>
+<script src="{{ app.params.skinUrl }}/src/js/base.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/tool/fastclick.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/tool/jquery-2.1.1.min.js"></script>
+<script>
+    var phone_width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var phone_height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    document.getElementsByClassName("layout")[0].style.height=phone_height+"px";
+</script>
+
+</html>

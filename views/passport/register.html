@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ app.language}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/base.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/login.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/lib/mui/mui.css">
+    <title>注册</title>
+</head>
+<body data-module="regiest">
+<div class="layout">
+    <div class="head">
+        <p>{{app.name}}</p>
+        <p>发掘更有价值的自己</p>
+    </div>
+    <form action="{{ url(['/passport/register']) }}" method="post">
+        <div class="form">
+
+            <div class="inputBox"><input type="text" class="form-common" name="RegisterForm[game_id]" placeholder="请输入游戏ID" id="playId"></div>
+
+            <div class="inputBox"><input type="text" class="form-common" name="RegisterForm[token]" placeholder="请输入授权码" id="sqrecord"></div>
+            <div class="inputBox"><input type="text" class="form-common" name="RegisterForm[phone]" placeholder="请输入手机号" id="phone"></div>
+            <div class="inputBox"><input type="text" name="RegisterForm[code]" placeholder="输入四位验证码" class="code" id="code"><i class="getBtn" id="getBtn" >获取验证码</i></div>
+            <div class="inputBox"><input type="password" name="RegisterForm[password]" class="form-common" placeholder="请设置6-16位密码" id="password"></div>
+
+        </div>
+        <div class="notice">
+            <!--暂时不能取消选择  改为 id=id="sure"即可-->
+            <i class="active" id="sure"></i>
+            <p>我已阅读并同意遵守<a href="">《米乐合伙人协议条款》</a></p>
+        </div>
+        <div class="btnBox">
+            <i  class="loginBtn" id="loginBtn">注册</i>
+        </div>
+    </form>
+</div>
+</body>
+<script src="{{ app.params.skinUrl }}/src/js/base.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/tool/fastclick.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/lib/mui/mui.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/regiest.js"></script>
+</html>

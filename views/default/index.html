@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/base.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/index.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/lib/mui/mui.css">
+    <title>首页</title>
+</head>
+<body data-module="indexapp">
+<div class="layout">
+    <div class="top">
+        <p><a href="{{ url(['/default/myprofit']) }}">今日收益(元)<i></i></a></p>
+        <p>{{ my_profit }}<i>**</i></p>
+    </div>
+    <div class="mid">
+        <ul class="clearfix">
+            <li><img src="{{ app.params.skinUrl }}/src/images/daili_icon.png" alt=""><a href="{{ url(['/default/myagent']) }}">我的代理</a><i>{{ auth_num }}</i></li>
+            <li><img src="{{ app.params.skinUrl }}/src/images/wanjia_icon.png" alt=""><a href="{{ url(['/default/myplayer']) }}">我的玩家</a><i>{{ game_user_num }}</i></li>
+
+        </ul>
+    </div>
+    <div class="mynews">
+        <img src="{{ app.params.skinUrl }}/src/images/message_icon.png" alt="">我的消息
+        <!--<i></i>-->
+        <a href="#"><img src="{{ app.params.skinUrl }}/src/images/right.png" alt=""></a>
+    </div>
+    <div class="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="{{ app.params.skinUrl }}/src/images/index1.png" alt=""></div>
+                <div class="swiper-slide"><img src="{{ app.params.skinUrl }}/src/images/index2.png" alt=""></div>
+                <div class="swiper-slide"><img src="{{ app.params.skinUrl }}/src/images/index3.png" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div class="indexNav clearfix">
+        <ul>
+            <li><a href="{{ url(['/default/auth']) }}"><img src="{{ app.params.skinUrl }}/src/images/shouquan_icon.png" alt="">授权代理</a></li>
+            <li><a href="{{ share }}"><img src="{{ app.params.skinUrl }}/src/images/wanjia_icon.png" alt="">邀请玩家</a></li>
+            <li><a href="{{ url(['/client/index']) }}"><img src="{{ app.params.skinUrl }}/src/images/kefu_icon.png" alt="">客服咨询</a></li>
+            <li><a href="{{ url(['/default/mydata']) }}"><img src="{{ app.params.skinUrl }}/src/images/mine_icon.png" alt="">我的</a></li>
+        </ul>
+    </div>
+    <div class="flx">
+        <p>可提现金额(元)</p>
+        <p>{{ can_money }}</p>
+        <p class="exp" id="exp">收益到账说明</p>
+        <!--{{ url(['/default/cash']) }}-->
+        <a href="javascript:" id="cash">提现</a>
+    </div>
+</div>
+</body>
+
+<script src="{{ app.params.skinUrl }}/src/js/base.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/tool/fastclick.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/tool/swiper-3.4.2.min.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/lib/mui/mui.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/index.js"></script>
+</html>

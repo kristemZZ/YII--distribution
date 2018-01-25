@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="{{ app.language}}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/base.css">
+    <link rel="stylesheet" href="{{ app.params.skinUrl }}/src/css/dlmessage.css">
+
+    <title>代理详情</title>
+</head>
+<body data-module="dlmessage">
+<div class="layout">
+    <div class="top">
+        <img src="{{ app.params.skinUrl }}/src/images/index1.png" alt="">
+        <p>{{ nickname }}</p>
+        <p>ID：{{ game_id }}</p>
+    </div>
+    <div class="searchList">
+        <ul>
+            <li>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td width="50%">
+                            玩家数量
+                        </td>
+                        <td width="50%">
+                            {{ nex_player_num }}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td width="50%">
+                            代理数量
+                        </td>
+                        <td width="50%">
+                            {{ nex_auth_num }}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td width="50%">
+                            总创收(元)
+                        </td>
+                        <td width="50%">
+                            {{ all_profit }}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+    </div>
+    <div class="searchList">
+        <ul>
+            <li>
+
+                <table>
+                    <tbody>
+                    <tr>
+                        <td width="50%">
+                            手机号
+                        </td>
+                        <td width="50%">
+                            {{ phone }}
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                </tbody>
+                </table>
+            </li>
+            <li>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td width="50%">
+                            微信号
+                        </td>
+                        <td width="50%">
+                            {{ wechat }}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td width="50%">
+                            注册时间
+                        </td>
+                        <td width="50%">
+                            {{ created_at | date("Y-m-d") }}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="{{ app.params.skinUrl }}/src/js/base.js"></script>
+<script src="{{ app.params.skinUrl }}/src/js/tool/fastclick.js"></script>
+</html>
