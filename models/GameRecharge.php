@@ -56,6 +56,8 @@ class GameRecharge extends \yii\db\ActiveRecord
      * @return array|int|mixed|\yii\db\ActiveRecord[]
      *  获取玩家充值金额
      */
+
+    
     public static function game_recharge_money(int $game_id, int $type = 0, int $month = 0,float $money = 0)
     {
         switch ($month){
